@@ -1,4 +1,4 @@
-/* PVEProxy files - /usr/share/pve-manager */
+/* PVEDiscordDark Theme by Weilbyte - https://github.com/Weilbyte/PVEDiscordDark */
 
 .x-box-inner {
     overflow: hidden;
@@ -39,7 +39,7 @@
 /* Change dropdown field color and icon (images/form/trigger.png) */
 .x-form-trigger-default {
     width: 22px;
-    background: 0 center #72767d url(https://i.imgur.com/uKlzb4D.png) no-repeat;
+    background: 0 center #72767d url(/pve2/images/dd_trigger.png) no-repeat;
 }
 
 /* Text color  */
@@ -130,11 +130,11 @@
 }
 
 .fa-ceph:before {
-    background-image: url(https://i.imgur.com/tp9KQqb.png);
+    background-image: url(/pve2/images/dd_cephwhite.png);
 }
 
 .x-treelist-row-over > * > .fa-ceph:before {
-    background-image: url(https://i.imgur.com/R13FV1x.png);
+    background-image: url(/pve2/images/dd_cephblurp.png);
     background-size: 14px 14px;
     transition:background-image 0.5s
 }
@@ -203,7 +203,7 @@
 
 /* Specific button colors - white/green/red/yellow */
 
-.x-btn-icon-el.x-btn-icon-el-default-small.fa.fa-book.x-btn-icon-el-default-toolbar-small, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-undo, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-terminal, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-fw.fa-ellipsis-v, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.x-btn-icon-el-default-toolbar-small.fa.fa-question-circle, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-send-o, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-play, .x-btn-inner.x-btn-inner-default-toolbar-small, .x-btn-icon-el.x-btn-icon-el-default-small.fa.black.fa-gear, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-send-o, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-clone, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-file-o, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-heartbeat, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-trash-o           {
+.x-btn-icon-el.x-btn-icon-el-default-small.fa.fa-book.x-btn-icon-el-default-toolbar-small, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-undo, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-terminal, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-fw.fa-ellipsis-v, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.x-btn-icon-el-default-toolbar-small.fa.fa-question-circle, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-send-o, .x-btn-icon-el.x-btn-icon-el-default-toolbar-small.fa.fa-play, .x-btn-inner.x-btn-inner-default-toolbar-small, .x-btn-icon-el.x-btn-icon-el-default-small.fa.black.fa-gear, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-send-o, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-clone, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-fw.fa-file-o, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-heartbeat, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-trash-o, .x-menu-item-icon-default.x-menu-item-icon.fa.fa-desktop,  .x-menu-item-icon-default.x-menu-item-icon.fa.fa-cube,  .x-menu-item-icon-default.x-menu-item-icon.fa.fa-terminal           {
     color: #ffffff;
 }
 
@@ -220,7 +220,7 @@
 }
 /* Menus */
 
-.x-menu-item, .x-menu-default, .x-menu-header {
+.x-menu-item, .x-menu-default {
     background: #7289da;
     border-width: 0;
     border-style: none;
@@ -230,16 +230,19 @@
     color: #ffffff;
 }
 
-.x-title-text {
-    color: #ffffff;
-    background: #7289da;
-}
+
 
 .x-menu-item-default.x-menu-item-separator {
     height: 0;
     border-top-width: 0;
     margin: 0 0;
     padding: 0;
+}
+
+.x-menu-header {
+    border-width: 0;
+    border-radius: 1px;
+    background: #23272a;
 }
 
 /* Tooltips n Stuff! */ 
@@ -261,7 +264,7 @@
 /* Little graph button boyes on Summary page */
 
 .x-tool-img {
-    background-image: url(https://i.imgur.com/kN6xgXB.png);
+    background-image: url(/pve2/images/dd_tool-sprites.png);
 }
 
 
@@ -319,11 +322,11 @@
 /* Collapse boyes */
 
 .x-splitter-collapsed .x-layout-split-bottom {
-    background-image: url(https://i.imgur.com/EjDyRue.png);
+    background-image: url(/pve2/images/dd_mini-top.png);
 }
 
 .x-layout-split-bottom {
-    background-image: url(https://i.imgur.com/uQyiVX7.png);
+    background-image: url(/pve2/images/dd_mini-bottom.png);
 }
 
 /* Tabs! */
@@ -387,7 +390,7 @@ div[id^="pveNotesView-"][id$="-innerCt"]  {
 
 img[src^="/pve2/images/proxmox_logo"]  {
     background: #23272a;
-    content: url(https://i.imgur.com/lr4i4Cr.png);
+    content: url(/pve2/images/dd_logo.png);
 }
 
 [id^="versioninfo"] {
@@ -442,17 +445,33 @@ div[id^="panel-"][id$="-body"]  {
     background: #2c2f33 !important;
 }
 
-/* Header color fixes */
+/* Header color fixes (NOT IN USE) 
 
-div[id^="pveGuestStatusView-"][id$="_header-title-textEl"], div[id^="pveNotesView-"][id$="_header-title-textEl"], div[id^="proxmoxRRDChart"][id$="_header-title-textEl"], div[id^="pveNodeStatus"][id$="_header-title-textEl"], div[id^="pveDc"][id$="_header-title-textEl"], div[id^="panel-"][id$="_header-title-textEl"], div[id^="pveStorage"][id$="_header-title-textEl"]  {
+div[id^="pveGuestStatusView-"][id$="_header-title-textEl"], div[id^="pveNotesView-"][id$="_header-title-textEl"], div[id^="proxmoxRRDChart"][id$="_header-title-textEl"], div[id^="pveNodeStatus"][id$="_header-title-textEl"], div[id^="pveDc"][id$="_header-title-textEl"], div[id^="panel-"][id$="_header-title-textEl"], div[id^="pveStorage"][id$="_header-title-textEl"], div[id^="pveStatusPanel"][id$="-placeholder-title-textEl"], div[id^="ext-comp-"][id$="_header-title-textEl"]  {
     background: #23272a;
     color: #7289da;
-}
+} */
 
-/* CPU/RAM/STORAGE/etc icon color fixes */
+/* CPU/RAM/STORAGE/SWAP/etc icon color fixes */
 
 .pve-itype-icon-processor {
-    background-image: url(../images/icon-cpu.png);
+    background-image: url(/pve2/images/dd_icon-cpu.png);
 }
 
+.pve-itype-icon-memory {
+    background-image: url(/pve2/images/dd_icon-ram.png);
+}
 
+.pve-itype-icon-storage {
+    background-image: url(/pve2/images/dd_icon-hdd.png);
+}
+
+.pve-itype-icon-swap {
+    background-image: url(/pve2/images/dd_icon-swap.png);
+}
+
+/* Datacenter Search icon color fix */
+
+.fa-fw.x-grid-icon-custom.fa.fa-database, .fa-fw.x-grid-icon-custom.fa.fa-desktop, .fa-fw.x-grid-icon-custom.fa.fa-cube {
+    color: #7289da;
+}
