@@ -12,7 +12,7 @@ You can check the 'previews' folder in the repo to check out how some stuff look
 
 **Server-side Installation:**
 1. Enter your PVE **node** shell..
-2. ```wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/ddInstall.sh```
+2. ```wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddInstall.sh```
 3. Run ```ddInstall.sh``` with root/sudo.
 4. Follow instructions given. 
 5. Done! 
@@ -27,7 +27,7 @@ You can check the 'previews' folder in the repo to check out how some stuff look
 
 **Server-side Uninstallation:**
 1. Enter your PVE **node** (the one you installed the theme on) shell...
-2. ```wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/ddRemove.sh```
+2. ```wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/ddRemove.sh```
 3. Run ```ddRemove.sh``` with root/sudo.
 4. Follow whatever instructions are given.
 5. Done! Its gone!
