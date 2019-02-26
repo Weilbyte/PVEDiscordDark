@@ -17,11 +17,11 @@ Say ' '
 DotSay 'Backing up index template file'
 cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak 
 DotSay 'Applying stylesheet..'
-wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/discordDark.css &> /dev/null 
+wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/style.css &> /dev/null 
 echo "<style type='text/css' media='screen'>" >> /usr/share/pve-manager/index.html.tpl
-cat discordDark.css >> /usr/share/pve-manager/index.html.tpl
+cat style.css >> /usr/share/pve-manager/index.html.tpl
 echo "</style>" >> /usr/share/pve-manager/index.html.tpl
-rm discordDark.css
+rm style.css
 DotSay 'Applied stylesheet!'
 DotSay 'Downloading images..'
 cd /usr/share/pve-manager/images
