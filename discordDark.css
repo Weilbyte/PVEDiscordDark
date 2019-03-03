@@ -376,3 +376,14 @@ html {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
 }
+/* Fix template icons */
+.lxc:after, .qemu:after {
+    background: transparent !important;
+    color: #7289da;
+    text-shadow: 0 0 0  #2c2f33 !Important; 
+    
+}
+/* Remove text shadow on some icons */
+.x-tree-icon-custom:after, .x-grid-icon-custom:after {
+    text-shadow: 0 0 0  #2c2f33; 
+}
