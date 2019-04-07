@@ -36,8 +36,7 @@ You can check the 'previews' folder in the repo to check out how some stuff look
 *Just remove the style from the extension?*
 
 ### Disclaimers
-**Tested and made for PVE 5.2-1**
-Ive no idea how It'll play with future PVE versions, so take caution.
+**Works with latest PVE version**
 
 **If youre using the installation script..**
 *Make a backup of ```/usr/share/pve-manager/index.html.tpl```. The script makes one anyways but make another one just to be sure*
