@@ -17,4 +17,4 @@ The files modified are..
 * `/usr/share/javascript/extjs/charts.js`
 * `/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js`
 
-For more on whats modified, check changes.md. 
+For more on whats modified, check [here.](https://github.com/Weilbyte/PVEDiscordDark/blob/master/serverside/jsmod/changes.md)
