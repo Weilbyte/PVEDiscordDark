@@ -425,3 +425,7 @@ text-shadow:0 0 0 #2c2f33!important
 .x-tree-icon-custom:after,.x-grid-icon-custom:after {
 text-shadow:0 0 0 #2c2f33
 }
+
+* {
+        font-weight: 350;
+}
