@@ -17,6 +17,8 @@ You can check the 'previews' folder in the repo to check out how some stuff look
 4. Follow instructions given. 
 5. Done! 
 
+If you want the charts/gauges and other elements to be dark mode too please look [here.](https://github.com/Weilbyte/PVEDiscordDark/tree/master/serverside/jsmod)
+
 **Browser Extension Installation:**
 1. Download a browser extension (such as Stylish) that allows you to change CSS styles 
 2. Follow extension-specific instructions to add custom style. For the style content paste in the contents of this file: ```https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/discordDark.css```
