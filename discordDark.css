@@ -429,3 +429,11 @@ text-shadow:0 0 0 #2c2f33
 * {
         font-weight: 350;
 }
+
+.x-surface-canvas {
+    filter: invert(100%);
+}
+
+.x-legend-item-marker {
+    filter: invert(100%);
+}
