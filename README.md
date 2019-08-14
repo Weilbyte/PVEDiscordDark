@@ -38,7 +38,7 @@ If you want the charts/gauges and other elements to be dark mode too please look
 *Just remove the style from the extension?*
 
 ### Disclaimers
-**Works with latest PVE version**
+**Might work with PVE version**
 
 **If youre using the installation script..**
 *Make a backup of ```/usr/share/pve-manager/index.html.tpl```. The script makes one anyways but make another one just to be sure*
