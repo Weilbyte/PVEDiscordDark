@@ -17,11 +17,9 @@ Say ' '
 DotSay 'Backing up index template file'
 cp /usr/share/pve-manager/index.html.tpl /usr/share/pve-manager/index.html.tpl.bak 
 DotSay 'Applying stylesheet..'
-wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/style.css &> /dev/null 
-echo "<style type='text/css' media='screen'>" >> /usr/share/pve-manager/index.html.tpl
-cat style.css >> /usr/share/pve-manager/index.html.tpl
-echo "</style>" >> /usr/share/pve-manager/index.html.tpl
-rm style.css
+echo "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" >> /usr/share/pve-manager/index.html.tpl
+cd /usr/share/pve-manager/css
+wget -O dd_style.css https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/serverside/style.css &> /dev/null 
 DotSay 'Applied stylesheet!'
 DotSay 'Downloading images..'
 cd /usr/share/pve-manager/images

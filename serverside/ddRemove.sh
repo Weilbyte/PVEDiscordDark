@@ -13,9 +13,11 @@ Say '[PVE Discord Dark UI Theme Remover]'
 Say '>Press any key to remove theme'
 read -p ""
 Say ' '
-DotSay 'Reverting html template change'
+DotSay 'Reverting template change'
 rm /usr/share/pve-manager/index.html.tpl
 cp /usr/share/pve-manager/index.html.tpl.bak /usr/share/pve-manager/index.html.tpl
+DotSay 'Removing stylesheet'
+rm /usr/share/pve-manager/css/dd_style.css
 DotSay 'Removing images'
 cd /usr/share/pve-manager/images
 rm dd_*
