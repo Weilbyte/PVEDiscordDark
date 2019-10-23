@@ -16,10 +16,6 @@ font-family:helvetica, arial, verdana, sans-serif;
 background:#fff;
 }
 
-.x-form-display-field {
-        color: #707C80;
-    }
-
 .x-form-item-body.x-form-item-body-default.x-form-display-field-body.x-form-display-field-body-default {
         border-radius: 6px;
         padding: 2px;
@@ -492,7 +488,7 @@ color:#fff;
 }
 
 .x-form-display-field {
-color:#fff;
+color: #707C80;
 }
 
 .x-component {
