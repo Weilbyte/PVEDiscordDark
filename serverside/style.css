@@ -242,6 +242,11 @@ color:#fff;
 color:#fff;
 }
 
+#button-1030 { 
+        background:#23272a;
+        border: 1px solid #d23d3f;
+}
+
 #userinfo.x-btn {
         background-color: transparent !important;
         border: 1px solid #d23d3f !important;
