@@ -242,10 +242,25 @@ color:#fff;
 color:#fff;
 }
 
-#button-1030 {
-background:#23272a;
-border-color:#d23d3f;
-border-width:1px;
+#userinfo.x-btn {
+        background-color: transparent !important;
+        border: 1px solid #d23d3f !important;
+}
+
+#menuitem-1030-iconEl {
+        color: white;
+}
+
+#menuitem-1031-iconEl {
+        color: white;
+}
+
+#menuitem-1032-iconEl {
+        color: white;
+}
+
+#menuitem-1034-iconEl {
+        color: #c52d2f;
 }
 
 .x-btn.x-unselectable.x-box-item.x-toolbar-item.x-btn-default-toolbar-small.x-btn-over {
