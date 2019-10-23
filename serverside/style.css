@@ -16,6 +16,18 @@ font-family:helvetica, arial, verdana, sans-serif;
 background:#fff;
 }
 
+.x-form-item-body.x-form-item-body-default.x-form-display-field-body.x-form-display-field-body-default {
+        border-radius: 6px;
+        border: 1px solid #faa61a;
+        background-color: #faa61a;
+        padding: 2px;
+        font-size: 14px;
+}
+
+.x-field.x-form-item.x-form-item-default.x-form-readonly.x-form-type-text {
+        border-radius: 7px;
+}
+
 .x-viewport {
 background:#23272a;
 }
