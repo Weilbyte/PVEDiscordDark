@@ -31,12 +31,16 @@ wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cpu.pn
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-hdd.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-ram.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-swap.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cd.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-display.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-network.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_logo.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_mini-bottom.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_mini-top.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_readme &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_tool-sprites.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_trigger.png &> /dev/null 
+
 DotSay 'Downloaded images!'
 Say ''
 Say 'Installation finished!'
