@@ -16,16 +16,17 @@ font-family:helvetica, arial, verdana, sans-serif;
 background:#fff;
 }
 
+.x-form-display-field {
+        color: #707C80;
+    }
+
 .x-form-item-body.x-form-item-body-default.x-form-display-field-body.x-form-display-field-body-default {
         border-radius: 6px;
-        border: 1px solid #faa81a25;
-        background-color: #faa81ada;
         padding: 2px;
-        font-size: 14px;
 }
 
 .x-field.x-form-item.x-form-item-default.x-form-readonly.x-form-type-text {
-        border-radius: 7px;
+        border-radius: 6px;
 }
 
 .x-viewport {
