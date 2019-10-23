@@ -34,6 +34,10 @@ wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-swap.p
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cd.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-display.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-network.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cloud.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-serial.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-usb.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-pci.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_logo.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_mini-bottom.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_mini-top.png &> /dev/null 

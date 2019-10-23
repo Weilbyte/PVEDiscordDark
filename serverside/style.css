@@ -18,8 +18,8 @@ background:#fff;
 
 .x-form-item-body.x-form-item-body-default.x-form-display-field-body.x-form-display-field-body-default {
         border-radius: 6px;
-        border: 1px solid #faa61a;
-        background-color: #faa61a;
+        border: 1px solid #faa81a25;
+        background-color: #faa81ada;
         padding: 2px;
         font-size: 14px;
 }
@@ -737,6 +737,22 @@ background-image: url(/pve2/images/dd_icon-cd.png);
 
 .pve-itype-icon-network {
 background-image: url(/pve2/images/dd_icon-network.png);
+}
+
+.pve-itype-icon-pci {
+background-image: url(/pve2/images/dd_icon-pci.png);
+}
+
+.pve-itype-icon-usb {
+background-image: url(/pve2/images/dd_icon-usb.png);
+}
+
+.pve-itype-icon-serial {
+background-image: url(/pve2/images/dd_icon-serial.png);
+}
+
+.pve-itype-icon-cloud {
+background-image: url(/pve2/images/dd_icon-cloud.png);
 }
 
 .fa-fw.x-grid-icon-custom.fa.fa-database {
