@@ -1,16 +1,3 @@
-/* ==UserStyle==
-@name         proxmox-discord
-@namespace    https://openusercss.org/theme/5df05a90854d3f0c000f6024
-@homepageURL  https://openusercss.org/theme/5df05a90854d3f0c000f6024
-@version      1.0.0
-@license      MIT
-@description  proxmox pve theme inspired by the discord colorscheme
-@author       tiny6996 (https://openusercss.org/profile/5df0578e854d3f0c000f6020)
-@preprocessor uso
-==/UserStyle== */
-
-/* PVEDiscordDark Theme by Weilbyte - https://github.com/Weilbyte/PVEDiscordDark */
-
 @-moz-document regexp("https://.*:8006/.*")
 {
 .x-box-inner {
