@@ -1,4 +1,4 @@
-@-moz-document regexp("https://.*:8006/.*")
+@-moz-document regexp("(https:\/\/.*):(8006)\/?(.*)")
 {
 .x-box-inner {
 overflow:hidden;
