@@ -1,12 +1,12 @@
 ![](https://i.imgur.com/mTsbUWk.png)
 
 ## PVEDiscordDark
-PVEDiscordDark is a  CSS 'theme' for the Proxmox Web UI. It was made with Discord's color scheme. Although ~98.9% (Psst, totally not a random percentage) of the Web UI has been darkened, there are some bits such as the CPU/Network/etc graphs that are still white because their background colors are defined in javascript and tbh I am too lazy to mess with that. 
+PVEDiscordDark is a  CSS 'theme' for the Proxmox Web UI. It was made with Discord's color scheme. Although ~99.8% (Psst, totally not a random percentage) of the Web UI has been darkened. There are some graphs that are still white because their background colors are defined in javascript, there is an experimental [feature](https://github.com/Weilbyte/PVEDiscordDark/tree/master/serverside/jsmod) to change these.
 
-You can check the 'previews' folder in the repo to check out how some stuff look ;)
+You can check the 'previews' folder in the repo to check out how some stuff look (without the JS modification)
 
 ## Installation 
-*Can be installed two-ways*:
+*Can be installed two ways*:
 * Server-side
 * Browser Extension
 
@@ -38,9 +38,7 @@ You can check the 'previews' folder in the repo to check out how some stuff look
 *Just remove the style from the extension?*
 
 ### Disclaimers
-**Might work with PVE version**
-
 **If youre using the installation script..**
 *Make a backup of ```/usr/share/pve-manager/index.html.tpl```. The script makes one anyways but make another one just to be sure*
 
-*Awoo'ing on this repo is strictly prohibited.*
+*Awoo'ing on this repo is allowed.*
