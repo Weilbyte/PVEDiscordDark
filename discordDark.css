@@ -1,4 +1,5 @@
-/* PVEDiscordDark Theme by Weilbyte - https://github.com/Weilbyte/PVEDiscordDark */
+@-moz-document regexp("(https:\/\/.*):(8006)\/?(.*)")
+{
 .x-box-inner {
 overflow:hidden;
 position:relative;
@@ -436,4 +437,6 @@ text-shadow:0 0 0 #2c2f33
 
 .x-legend-item-marker {
     filter: invert(100%);
+}
+
 }
