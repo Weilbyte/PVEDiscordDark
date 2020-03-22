@@ -5,7 +5,7 @@ Say () {
 }
 
 DotSay () {
-    printf "[\e[1;34m*\e[0m] \e[0;34m $1  \e[0m \n"; 
+    printf "[\e[1;34m*\e[0m] \e[1;34m $1  \e[0m \n"; 
 }
 
 
