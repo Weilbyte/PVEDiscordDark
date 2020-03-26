@@ -64,7 +64,7 @@ border-width:0;
 }
 
 .x-grid-cell-inner {
-background:#2c2f33;
+background: transparent;
 color:#fff;
 }
 
