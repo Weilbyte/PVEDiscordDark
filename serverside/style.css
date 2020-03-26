@@ -745,11 +745,11 @@ background-image:url(/pve2/images/dd_icon-hdd.png);
 background-image:url(/pve2/images/dd_icon-swap.png);
 }
 
-.pve-itype-icon-display {
+.pve-itype-icon-display, .x-grid-row-console {
 background-image: url(/pve2/images/dd_icon-display.png);
 }
 
-.pve-itype-icon-cdrom {
+.pve-itype-icon-cdrom  {
 background-image: url(/pve2/images/dd_icon-cd.png);
 }
 
@@ -817,4 +817,9 @@ text-shadow:0 0 0 #2c2f33;
 
 * {
         font-weight: 350;
+}
+
+.x-grid-row-loading {
+background-image: url(/pve2/images/dd_loading.svg);
+background-size: 32px;
 }
