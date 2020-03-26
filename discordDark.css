@@ -404,6 +404,34 @@ background-image:url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/image
 background-image:url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-swap.png)
 }
 
+.pve-itype-icon-display, .x-grid-row-console {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-display.png);
+}
+    
+.pve-itype-icon-cdrom  {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cd.png);
+}
+    
+.pve-itype-icon-network {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-network.png);
+}
+    
+.pve-itype-icon-pci {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-pci.png);
+}
+    
+.pve-itype-icon-usb {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-usb.png);
+}
+    
+.pve-itype-icon-serial {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-serial.png);
+}
+    
+.pve-itype-icon-cloud {
+background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_icon-cloud.png);
+}
+
 .fa-fw.x-grid-icon-custom.fa.fa-database,.fa-fw.x-grid-icon-custom.fa.fa-desktop,.fa-fw.x-grid-icon-custom.fa.fa-cube {
 color:#7289da
 }
@@ -438,6 +466,16 @@ text-shadow:0 0 0 #2c2f33
 
 .x-legend-item-marker {
     filter: invert(100%);
+}
+
+.x-grid-row-loading {
+    background-image: url(https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_loading.svg);
+    background-size: 32px;
+}
+
+.x-grid-item-alt {
+background:#23272a;
+border-width:0!important;
 }
 
 }
