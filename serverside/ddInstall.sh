@@ -42,6 +42,7 @@ wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_mini-top.pn
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_readme &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_tool-sprites.png &> /dev/null 
 wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_trigger.png &> /dev/null 
+wget https://github.com/Weilbyte/PVEDiscordDark/raw/master/images/dd_loading.svg &> /dev/null 
 
 DotSay 'Downloaded images!'
 Say ''
