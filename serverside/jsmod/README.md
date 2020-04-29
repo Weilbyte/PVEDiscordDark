@@ -8,7 +8,7 @@ These modifications are server-side only and currently it is only working on PVE
 ## Installation
 Download the bash file for your version and run it anywhere on your Proxmox **node**. If the changes arent appearing on your browser right away, please clear cache.
 
-Currently supported versions are 5.4-3 and 6.0-4 (but also reportedly works on 6.1-8 and inbetween). 
+Currently supported versions are 5.4-3, 6.0-4 and 6.1-3. 
 
 ## Uninstallation
 The bash script backs up the files it replaces. Just remove the modified file and remove the '.bak' extension from the end of the backed up files.
