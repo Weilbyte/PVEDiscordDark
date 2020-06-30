@@ -828,3 +828,7 @@ text-shadow:0 0 0 #2c2f33;
 background-image: url(/pve2/images/dd_loading.svg);
 background-size: 32px;
 }
+
+.proxmox-invalid-row {
+background-color: #401314;
+}
