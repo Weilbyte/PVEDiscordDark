@@ -579,7 +579,7 @@
 }
 
 .x-progress-default .x-progress-bar-default {
-  background-color: #7289da;
+  background-color: #43b581;
 }
 
 .x-progress-text {
@@ -638,7 +638,7 @@
 }
 
 .critical {
-  color: #f04747;
+  color: #ba2b2d;
 }
 
 .warning {
@@ -836,7 +836,7 @@ div[id^="panel-"][id$="-body"] {
 }
 
 .fa-sign-out:before {
-  color: #d23d3f;
+  color: #ba2b2d;
 }
 
 .fa-language:before {
