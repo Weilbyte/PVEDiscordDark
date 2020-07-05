@@ -16,7 +16,8 @@ images = [
     'dd_icon-pci.png', 'dd_logo.png',
     'dd_mini-bottom.png', 'dd_mini-top.png',
     'dd_readme', '/dd_tool-sprites.png',
-    'dd_trigger.png', 'dd_loading.svg']
+    'dd_trigger.png', 'dd_loading.svg',
+    'dd_icon-die.png']
 
 class colors:
     HEADER = '\033[95m'
