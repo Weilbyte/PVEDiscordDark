@@ -633,6 +633,10 @@
   background: #2c2f33 !important;
 }
 
+.x-css-shadow {
+  display: none;
+}
+
 .x-splitter {
   background: #23272a;
 }
@@ -671,6 +675,10 @@
 }
 
 div[id^="pveGuestStatusView-"][id$="-body"] {
+  background: #23272a;
+}
+
+div[id^="pveStorageStatusView-"][id$="-body"] {
   background: #23272a;
 }
 
@@ -883,5 +891,9 @@ html {
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
+}
+
+a {
+  color: white;
 }
 /*# sourceMappingURL=PVEDiscordDark.css.map */
