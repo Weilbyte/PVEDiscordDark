@@ -578,8 +578,8 @@
   background: #2c2f33;
 }
 
-.x-progress-bar {
-  background-color: #7289da !important;
+.x-progress-default .x-progress-bar-default {
+  background-color: #7289da;
 }
 
 .x-progress-text {
@@ -635,6 +635,14 @@
 
 .x-css-shadow {
   display: none;
+}
+
+.critical {
+  color: #f04747;
+}
+
+.warning {
+  color: #faa61a;
 }
 
 .x-splitter {
@@ -827,7 +835,11 @@ div[id^="panel-"][id$="-body"] {
   background-image: url("/pve2/images/dd_cephwhite.png");
 }
 
-.fa {
+.fa-sign-out:before {
+  color: #d23d3f;
+}
+
+.fa-language:before {
   color: white;
 }
 
