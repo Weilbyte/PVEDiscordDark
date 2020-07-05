@@ -234,6 +234,10 @@ background:#7289da;
 border-width:0;
 }
 
+.x-btn-focus.x-btn-default-toolbar-small {
+    background-color: #7289da;
+}
+
 .x-btn-inner {
 color:#fff;
 }
