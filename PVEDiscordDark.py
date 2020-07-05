@@ -114,6 +114,11 @@ def uninstallTheme():
             if ("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" not in line or "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" not in line):
                 tplFile.write(line)
         tplFile.truncate()
+    if os.path.exists('/usr/share/javascript/extjs/charts.js.bak'):
+        cprint(colors.NORMAL, 'Reverting charts.js replacement..')
+        os.remove('/usr/share/javascript/extjs/charts.js')
+        shutil.copyfile('/usr/share/javascript/extjs/charts.js.bak', '/usr/share/javascript/extjs/charts.js')
+        os.remove('/usr/share/javascript/extjs/charts.js.bak')
     if os.path.exists('/usr/share/pve-manager/css/dd_style.css'):
         cprint(colors.NORMAL, 'Removing stylesheet..')
         os.remove('/usr/share/pve-manager/css/dd_style.css')
