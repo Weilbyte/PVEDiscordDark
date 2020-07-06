@@ -6,7 +6,7 @@ Proxmox.panel.GaugeWidget.prototype.items[1].series[0].colors[0] = '#2C2F33';
 
 PVE.window.BackupConfig.prototype.items.style['background-color'] = '#23272a';
 PVE.DiskSmartWindow.prototype.items[1].style['background-color'] = '#23272a';
-PVE.window.TFAEdit.prototype.items[0].items[0].items[1].style["background-color"] = '#23272a';
+PVE.window.TFAEdit.prototype.items[0].items[0].items[1].style["background-color"] = 'transparent';
 
 
 PVE.node.Summary.prototype.showVersions = function() {
