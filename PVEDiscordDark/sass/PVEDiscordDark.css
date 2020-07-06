@@ -936,6 +936,7 @@ div[id^="pveCephInstallWindow-"][id$="-innerCt"] div div div div {
 
 .pmx-hint {
   color: #faa61a;
+  background-color: transparent;
 }
 
 html {
