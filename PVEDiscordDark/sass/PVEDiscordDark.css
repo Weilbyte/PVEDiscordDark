@@ -772,6 +772,10 @@ div[id^="panel-"][id$="-body"] {
   background: #23272a;
 }
 
+a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-refresh"]:before {
+  color: #faa61a;
+}
+
 #userinfo.x-btn {
   background-color: transparent !important;
   border: 1px solid #d23d3f !important;
@@ -855,10 +859,6 @@ div[id^="panel-"][id$="-body"] {
 
 .fa-sign-out:before {
   color: #ba2b2d;
-}
-
-div[id^="menuitem-"][id$="-iconEl"]:before {
-  color: #faa61a;
 }
 
 .fa-language:before {
