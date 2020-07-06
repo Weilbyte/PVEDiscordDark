@@ -857,6 +857,10 @@ div[id^="panel-"][id$="-body"] {
   color: #ba2b2d;
 }
 
+.fa-refresh:before {
+  color: #faa61a;
+}
+
 .fa-language:before {
   color: white;
 }
