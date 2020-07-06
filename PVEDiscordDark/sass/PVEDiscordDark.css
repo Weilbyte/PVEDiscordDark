@@ -421,6 +421,10 @@
   border-right-width: 0;
 }
 
+.x-message-box .x-window-body {
+  background-color: #2c2f33;
+}
+
 .x-viewport {
   background: #23272a;
 }
@@ -602,7 +606,7 @@
 }
 
 .x-component.x-box-item.x-component-default {
-  background: #23272a;
+  background-color: #2c2f33;
 }
 
 .x-component.x-fieldset-header-text.x-component-default {
