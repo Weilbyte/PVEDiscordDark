@@ -857,7 +857,7 @@ div[id^="panel-"][id$="-body"] {
   color: #ba2b2d;
 }
 
-.fa-refresh:before {
+div[id^="menuitem-"][id$="-iconEl"]:before {
   color: #faa61a;
 }
 
