@@ -676,6 +676,14 @@
   border-color: #23272a;
 }
 
+div[id^="pveDcHealth-"][id$="-body"], div[id^="pveDcGuests-"][id$="-body"], div[id^="pveDcSummary-"][id$="-innerCt"] > div:nth-child(3) > div:nth-child(2), div[id^="pveDcSummary-"][id$="-innerCt"] > div:nth-child(5) > div:nth-child(2) > div > div {
+  background-color: #23272a;
+}
+
+div[id^="pveDcSummary-"][id$="-innerCt"] > div:nth-child(4) > div:nth-child(3) {
+  border: 1px solid #23272a;
+}
+
 #toolbar-1069-innerCt {
   background: #2c2f33;
 }
@@ -924,6 +932,10 @@ div[id^="pveCephInstallWindow-"][id$="-innerCt"] div div div div {
 
 .x-layout-split-bottom {
   background-image: url("/pve2/images/dd_mini-bottom.png") !important;
+}
+
+.pmx-hint {
+  color: #faa61a;
 }
 
 html {
