@@ -171,7 +171,7 @@
 }
 
 .x-treelist-item-selected > .x-treelist-row {
-  background-color: #2C2F33;
+  background-color: #23272a;
 }
 
 .x-legend-item {
@@ -320,7 +320,7 @@
 }
 
 .x-column-header-inner {
-  background: #2c2f33;
+  background: #23272a;
   border-width: 0 !important;
 }
 
@@ -680,6 +680,10 @@
 
 [id^="pveNodeStatus"] {
   background: #23272a;
+}
+
+div[id^="toolbar-"][id$="-innerCt"] div[id^="toolbar-"][id$="-targetEl"] div ul li div {
+  background-color: #2C2F33;
 }
 
 div[id^="pveGuestStatusView-"][id$="-body"] {
