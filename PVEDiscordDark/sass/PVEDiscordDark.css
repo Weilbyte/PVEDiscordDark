@@ -645,6 +645,11 @@
   color: #faa61a;
 }
 
+.install-mask {
+  color: white;
+  background-color: #23272A;
+}
+
 .x-splitter {
   background: #23272a;
 }
@@ -778,6 +783,10 @@ a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-refresh"]:before {
 
 a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-trash-o"]:before {
   color: #ba2b2d;
+}
+
+div[id^="pveCephInstallWindow-"][id$="-innerCt"] div div div div {
+  background: #23272a;
 }
 
 #userinfo.x-btn {
