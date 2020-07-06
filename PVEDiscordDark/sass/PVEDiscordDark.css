@@ -776,6 +776,10 @@ a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-refresh"]:before {
   color: #faa61a;
 }
 
+a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-trash-o"]:before {
+  color: #ba2b2d;
+}
+
 #userinfo.x-btn {
   background-color: transparent !important;
   border: 1px solid #d23d3f !important;
