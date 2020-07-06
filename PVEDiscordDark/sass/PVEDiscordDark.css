@@ -653,6 +653,20 @@
   background-image: url("/pve2/images/dd_mini-top.png");
 }
 
+.x-boundlist-item {
+  color: white;
+  background-color: #2c2f33;
+  border: none;
+}
+
+.x-boundlist-item:hover {
+  background-color: #23272a;
+}
+
+.x-boundlist {
+  border-color: #23272a;
+}
+
 #toolbar-1069-innerCt {
   background: #2c2f33;
 }
