@@ -2,13 +2,15 @@ const swapLogo = async function() {
 	const imgElements = document.getElementsByTagName('img');
 	var found = false;
 	for (var i = 0; i< imgElements.length; i++) {
-		var source = imgElements[i].src;
-		if (source.includes('proxmox_logo.png')) {
+		var node = imgElements[i]
+		if (node.src.includes('proxmox_logo.png')) {
 			found = true;
-			imgElements[i].parentElement.parentElement.style.background = '#23272A';
-			imgElements[i].setAttribute('height', '34px');
-			imgElements[i].setAttribute('width', '177px');
-			imgElements[i].setAttribute('src', '/pve2/images/dd_logo.png');
+			var width = (node.parentElement.clientWidth == undefined || node.parentElement.clientWidth == 0) ? 177 : node.parentElement.clientWidth;
+			var height = (node.parentElement.clientHeight == undefined || node.parentElement.clientHeight == 0) ? 34 : node.parentElement.clientHeight;
+			node.parentElement.parentElement.style.background = '#23272A';
+			node.setAttribute('height', `${height}px`);
+			node.setAttribute('width', `${width}px`);
+			node.setAttribute('src', '/pve2/images/dd_logo.png');
 		}
 	}
 	if (!found) {
