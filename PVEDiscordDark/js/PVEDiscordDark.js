@@ -5,8 +5,8 @@ const swapLogo = async function() {
 		var node = imgElements[i]
 		if (node.src.includes('proxmox_logo.png')) {
 			found = true;
-			var width = (node.parentElement.clientWidth == undefined || node.parentElement.clientWidth == 0) ? 177 : node.parentElement.clientWidth;
-			var height = (node.parentElement.clientHeight == undefined || node.parentElement.clientHeight == 0) ? 34 : node.parentElement.clientHeight;
+			var width = (node.parentElement.clientWidth == undefined || node.parentElement.clientWidth == 0) ? 172 : node.parentElement.clientWidth;
+			var height = (node.parentElement.clientHeight == undefined || node.parentElement.clientHeight == 0) ? 30 : node.parentElement.clientHeight;
 			node.parentElement.parentElement.style.background = '#23272A';
 			node.setAttribute('height', `${height}px`);
 			node.setAttribute('width', `${width}px`);
