@@ -688,6 +688,10 @@ div[id^="pveDcSummary-"][id$="-innerCt"] > div:nth-child(4) > div:nth-child(3) {
   border: 1px solid #23272a;
 }
 
+div[id^="proxmoxRRDChart-"] > div:nth-child(3) > div {
+  background-color: #23272a;
+}
+
 #toolbar-1069-innerCt {
   background: #2c2f33;
 }
