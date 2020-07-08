@@ -453,8 +453,7 @@
 
 .x-menu-default {
   background: #7289da;
-  border-style: none;
-  border-width: 0;
+  border: 1px solid #23272A;
 }
 
 .x-menu-item-text {
@@ -524,6 +523,19 @@
   border-top-width: 0;
   margin: 0;
   padding: 0;
+}
+
+div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] {
+  background: #2c2f33;
+}
+
+div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"] {
+  background: #23272A;
+}
+
+div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"] {
+  opacity: 0.5;
+  background: #23272A;
 }
 
 .x-tree-icon.x-tree-icon-custom.x-tree-icon-parent-expanded.fa.fa-server {
