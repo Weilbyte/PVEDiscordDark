@@ -71,7 +71,7 @@ def themeIsInstalled():
     tplFile = open('/usr/share/pve-manager/index.html.tpl')
     tplLines = tplFile.readlines()
     for line in tplLines:
-        if "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" in line:
+        if ("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" in line or "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" in line):
             tplUsesTheme = True
     if (os.path.isfile('/usr/share/pve-manager/css/dd_style.css') or tplUsesTheme):
         return True
@@ -91,11 +91,6 @@ def installTheme():
     with open('/usr/share/pve-manager/index.html.tpl', 'a') as tplFile:
         tplFile.write("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>")
         tplFile.write("<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>")
-    cprint(colors.NORMAL, 'Replacing charts.js..')
-    if os.path.exists('/usr/share/javascript/extjs/charts.js'):
-        shutil.copyfile('/usr/share/javascript/extjs/charts.js', '/usr/share/javascript/extjs/charts.js.bak')
-        os.remove('/usr/share/javascript/extjs/charts.js')
-    urllib.request.urlretrieve(f'{baseURL}/PVEDiscordDark/js/charts.js', '/usr/share/javascript/extjs/charts.js')
     for index, image in enumerate(images):
         cprint(colors.NORMAL, f'Downloading images [{index + 1}/{len(images)}]..\r', False, True)
         urllib.request.urlretrieve(f'{baseURL}/PVEDiscordDark/images/{image}', f'/usr/share/pve-manager/images/{image}')

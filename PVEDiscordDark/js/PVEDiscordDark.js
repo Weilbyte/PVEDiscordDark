@@ -19,6 +19,15 @@ const swapLogo = async function() {
 	};
 };
 
+const patchCharts = function() {
+	Ext.chart.theme.Base.prototype.config.chart.defaults.background = '#23272a';
+	Ext.chart.theme.Base.prototype.config.axis.defaults.label.color = 'white';
+	Ext.chart.theme.Base.prototype.config.axis.defaults.title.color = 'white';
+	Ext.chart.theme.Base.prototype.config.axis.defaults.style.strokeStyle = '#7289DA';
+	Ext.chart.theme.Base.prototype.config.axis.defaults.grid.strokeStyle = 'rgba(44, 47, 51, 1)';
+	Ext.chart.theme.Base.prototype.config.sprites.text.color = 'white';
+};
+
 function patchGaugeWidget() {
 	Proxmox.panel.GaugeWidget.prototype.backgroundColor = '#2C2F33';
 	Proxmox.panel.GaugeWidget.prototype.criticalColor = '#f04747';
@@ -169,6 +178,7 @@ function patchSubscription() {
 }
 
 swapLogo();
+patchCharts();
 patchGaugeWidget();
 patchBackupConfig();
 patchDiskSmartWindow();
