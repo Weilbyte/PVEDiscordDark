@@ -570,12 +570,20 @@
   color: #7289da !important;
 }
 
+.x-tree-icon.x-tree-icon-custom.x-tree-icon-leaf.fa.fa-fw.fa-unlock {
+  color: white;
+}
+
 .x-tree-icon.x-tree-icon-custom.x-tree-icon-leaf.fa.fa-desktop {
   color: #7289da !important;
 }
 
 .x-tree-icon.x-tree-icon-custom.x-tree-icon-leaf.fa.fa-database {
   color: #7289da !important;
+}
+
+.x-tree-icon-parent-expanded:not(.x-tree-icon-custom):before, .x-tree-icon-parent:not(.x-tree-icon-custom):before {
+  color: white;
 }
 
 .x-tree-icon-custom:after {
