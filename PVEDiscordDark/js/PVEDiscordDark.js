@@ -49,7 +49,7 @@ function patchSummary() {
 			autoScroll: true,
 			padding: 5,
 			style: {
-			'background-color': '#23272a',
+			'background-color': '#2C2F33',
 			'white-space': 'pre',
 			'font-family': 'monospace'
 			}
