@@ -23,5 +23,7 @@ The installation is very simple thanks to the utility. Run the following command
 ### Updating from the old version
 You will need to completely remove the old version (and revert JSMod changes). You can find the uninstall scripts and guides in the `old` branch. 
 
+## Notes
+Thanks to [jonasled](https://github.com/jonasled) for helping out with the old version, and thanks to [SmallEngineMechanic](https://github.com/smallenginemechanic) for catching bugs for the rewrite!
 
-*Awoo'ing on this repo is allowed.*
+*Awoo'ing on this repo is encouraged.*
