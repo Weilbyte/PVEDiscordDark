@@ -1,4 +1,4 @@
-![](https://i.imgur.com/mTsbUWk.png)
+![](https://i.imgur.com/poWmLtK.png)
 
 ## PVEDiscordDark
 PVEDiscordDark is a  CSS 'theme' for the Proxmox Web UI. It was made with Discord's color scheme. Although ~99.8% (Psst, totally not a random percentage) of the Web UI has been darkened. There are some graphs that are still white because their background colors are defined in javascript, there is an experimental [feature](https://github.com/Weilbyte/PVEDiscordDark/tree/master/serverside/jsmod) to change these.
