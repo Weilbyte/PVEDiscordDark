@@ -3,8 +3,11 @@ import subprocess
 import urllib.request
 import os.path
 import shutil
+import argparse
 import os
 import time
+
+ACTION = None 
 
 images = [
     'dd_cephblurp.png', 'dd_cephwhite.png',
@@ -30,7 +33,8 @@ class colors:
     UNDERLINE = '\033[4m'
 
 def clear():
-    print("\033c", end="")
+    if ACTION == None:
+        print("\033c", end="")
 
 def cprint(color, text, bold=False, inline=False):
     endc = '\n'
@@ -59,7 +63,7 @@ def checkPVE():
 
 def checkConn():
     try:
-        urllib.request.urlopen('http://google.com')
+        urllib.request.urlopen('http://github.com')
         return
     except:
         cprint(colors.FAIL, 'An Internet connection is required to install PVEDiscordDark.', True)
@@ -95,9 +99,10 @@ def installTheme():
         cprint(colors.NORMAL, f'Downloading images [{index + 1}/{len(images)}]..\r', False, True)
         urllib.request.urlretrieve(f'{baseURL}/PVEDiscordDark/images/{image}', f'/usr/share/pve-manager/images/{image}')
     cprint(colors.OKGREEN, '\nTheme installed successfully!', True)
-    cprint(colors.NORMAL, 'Press [ENTER] to go back.')
-    input('')
-    doMainMenu()
+    if ACTION == None:
+        cprint(colors.NORMAL, 'Press [ENTER] to go back.')
+        input('')
+        doMainMenu()
 
 def uninstallTheme():
     clear()
@@ -126,9 +131,10 @@ def uninstallTheme():
         if asset.startswith('dd_'):
             os.remove(f'/usr/share/pve-manager/images/{asset}')
     cprint(colors.OKGREEN, '\n\nTheme uninstalled successfully!', True)
-    cprint(colors.NORMAL, 'Press [ENTER] to go back.')
-    input('')
-    doMainMenu()
+    if ACTION == None:
+        cprint(colors.NORMAL, 'Press [ENTER] to go back.')
+        input('')
+        doMainMenu()
 
 def doHeader():
     cprint(colors.HEADER, '[~]', True, True)
@@ -157,15 +163,27 @@ def doMainMenu():
         doMainMenu()
 
 def main():
+    parser = argparse.ArgumentParser(description='PVEDiscordDark Theme Utility')
+    parser.add_argument('--action', '-a', choices=['install', 'uninstall'], help='action for unattended mode')
+    args = parser.parse_args()
+    global ACTION
+    ACTION = args.action
     checkPVE()
     checkConn()
     time.sleep(0.5)
-    try:
-        doMainMenu()
-    except KeyboardInterrupt:
-        print('\n')
-        exit(0)
-
+    if ACTION == None:
+        try:
+            print('mm')
+            doMainMenu()
+        except KeyboardInterrupt:
+            print('\n')
+            exit(0)
+    else:
+        if ACTION == 'install': 
+            installTheme()
+        else:
+            if themeIsInstalled():
+                uninstallTheme()
 
 if __name__ == "__main__":
     main()
