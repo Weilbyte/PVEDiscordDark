@@ -41,7 +41,8 @@ function patchBackupConfig() {
 };
 
 function patchDiskSmartWindow() {
-	PVE.DiskSmartWindow.prototype.items[1].style['background-color'] = '#23272a';
+	const target = PVE.DiskSmartWindow || Proxmox.window.DiskSmart;
+	target.prototype.items[1].style['background-color'] = '#23272a';
 }
 
 function patchTFAEdit() {
