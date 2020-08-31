@@ -42,7 +42,7 @@ def cprint(color, text, bold=False, inline=False):
         endc = ''
     if bold:
         print(colors.BOLD)
-    print(f'{color}{text}{colors.NORMAL}', end=endc)
+    print(color + text + colors.NORMAL, end=endc)
 
 def getPVEVersion():
     pv = subprocess.check_output('pveversion --verbose | grep pve-manager | cut -c 14- | cut -c -6', shell=True, stderr=open(os.devnull, 'w'))
