@@ -45,7 +45,10 @@ def cprint(color, text, bold=False, inline=False):
     print(color + text + colors.NORMAL, end=endc)
 
 def getPVEVersion():
-    pv = subprocess.check_output('pveversion --verbose | grep pve-manager | cut -c 14- | cut -c -6', shell=True, stderr=open(os.devnull, 'w'))
+    try:
+        pv = subprocess.check_output('pveversion --verbose | grep pve-manager | cut -c 14- | cut -c -6', shell=True, stderr=open(os.devnull, 'w'))
+    except:
+        return ""
     pv = pv.decode('ascii').replace(" ", "").replace("\n","")
     if (('/bin/' in pv) or (len(pv) > 7)):
         return ""
