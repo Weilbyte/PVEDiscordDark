@@ -97,7 +97,7 @@ def installTheme():
         tplFile.write("<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>")
     for index, image in enumerate(images):
         imageCurrent = index + 1
-        cprint(colors.NORMAL, 'Downloading images [' + imageCurrent + '/' + len(images) + ']..\r', False, True)
+        cprint(colors.NORMAL, 'Downloading images [' + str(imageCurrent) + '/' + str(len(images)) + ']..\r', False, True)
         urllib.request.urlretrieve(baseURL + '/PVEDiscordDark/images/' + image, '/usr/share/pve-manager/images/' + image)
     cprint(colors.OKGREEN, '\nTheme installed successfully!', True)
     if ACTION == None:
