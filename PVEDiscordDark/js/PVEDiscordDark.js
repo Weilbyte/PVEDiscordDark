@@ -52,8 +52,8 @@ function patchTFAEdit() {
 function patchCreateWidget() {
 	_createWidget = Ext.createWidget
 	Ext.createWidget = function(c, p) {
-		if (p.style) {
-			if (c === 'component' && p.style['background-color'] === 'white') p.style['background-color'] = '#2C2F33'
+		if (typeof p === 'object' && typeof p.style === 'object') {
+			if (c === 'component' && typeof p.style['background-color'] === 'string' && p.style['background-color'] === 'white') p.style['background-color'] = '#2C2F33'
 		}
 		return _createWidget(c, p)
 	}
