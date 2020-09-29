@@ -1,13 +1,15 @@
-import sys,os
+#!/usr/bin/python3
+
+import os
+import sys
+import time
 import subprocess
 import urllib.request
 import os.path
 import shutil
 import argparse
-import os
-import time
 
-ACTION = None 
+ACTION = None
 
 images = [
     'dd_cephblurp.png', 'dd_cephwhite.png',
@@ -180,7 +182,7 @@ def main():
             print('\n')
             exit(0)
     else:
-        if ACTION == 'install': 
+        if ACTION == 'install':
             installTheme()
         else:
             if themeIsInstalled():
