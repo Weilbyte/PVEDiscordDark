@@ -2,13 +2,13 @@
 	background-color: #677bc4
 
 .x-menu-item
-	background: #7289da
+	background: $blurple
 	border-style: none
 	border-width: 0
 
 .x-menu-default
-	background: #7289da
-	border: 1px solid #23272A
+	background: $blurple
+	border: 1px solid $darker
 
 .x-menu-item-text
 	color: #fff
@@ -16,7 +16,7 @@
 .x-menu-header
 	//If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
 	border-radius: 1px
-	background: #23272a
+	background: $darker
 	border-width: 0
 
 .x-menu-item-icon-default.x-menu-item-icon.fa
@@ -37,7 +37,7 @@
 			color: #fff
 
 		&.fa-play
-			color: #43b581
+			color: $green
 
 		&.fa-stop
 			color: #d23d3f
@@ -46,7 +46,7 @@
 			color: #d23d3f
 
 		&.fa-pause
-			color: #faa61a
+			color: $yellow
 
 
 	&.fa-heartbeat
@@ -76,17 +76,17 @@
 
 // 🙃
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"]
-    background: #2c2f33
+    background: $dark
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"]
-    background: #23272A
+    background: $darker
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"]
     opacity: 0.5
-    background: #23272A
+    background: $darker
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"]>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div[class*=x-menu-item]
 	background: inherit
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"]>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div[class*=x-menu-item]>a[class*=x-menu-item-focus]
-	background: #23272A
+	background: $darker
