@@ -1,1 +1,1 @@
-Traying to make a BLACK theme for Proxmox based on PVEDiscordDark theme (https://github.com/Weilbyte/PVEDiscordDark).
+Trying to make a BLACK (#00000) theme for Proxmox based on PVEDiscordDark theme (https://github.com/Weilbyte/PVEDiscordDark).
