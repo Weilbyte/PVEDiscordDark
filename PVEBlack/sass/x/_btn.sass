@@ -1,0 +1,54 @@
+.x-btn
+	background: $blurple
+	border-width: 0
+	&.x-unselectable.x-box-item
+		&.x-toolbar-item.x-btn-default-toolbar-small
+			&.x-btn-over, &.x-btn-menu-active
+				background-color: #677bc4
+		&.x-btn-default-small.x-btn-over
+			background-color: #677bc4
+	&.x-btn-menu-active.x-btn-default-toolbar-small, &.x-btn.x-btn-pressed.x-btn-default-toolbar-small
+		background-color: #677bc4
+
+.x-btn-over
+	&.x-btn-default-toolbar-small
+		background-color: #677bc4
+
+.x-btn-focus
+	&.x-btn-default-toolbar-small
+		background-color: $blurple
+
+.x-btn-inner
+	color: #fff
+	&.x-btn-inner-default-small
+		color: #fff
+	&.x-btn-inner-default-toolbar-small
+		color: #fff
+
+
+.x-btn-disabled
+	background-image: none
+	background-color: #737fab !important
+
+.x-btn-icon-el
+	&.x-btn-icon-el-default-toolbar-small
+		&.fa
+			&.fa-undo
+				color: #fff
+			&.fa-terminal
+				color: #fff
+			&.fa-send-o
+				color: #fff
+			&.fa-play
+				color: $green
+			&.fa-fw.fa-ellipsis-v
+				color: #fff
+			&.fa-power-off
+	            color: #d23d3f
+		&.x-btn-icon-el-default-toolbar-small.fa.fa-question-circle
+			color: #fff
+	&.x-btn-icon-el-default-small.fa
+		&.fa-book.x-btn-icon-el-default-toolbar-small
+			color: #fff
+		&.black.fa-gear
+			color: #fff
