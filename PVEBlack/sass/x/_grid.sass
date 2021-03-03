@@ -1,0 +1,44 @@
+.x-grid-cell-inner
+	background: transparent
+	color: #fff
+
+.x-grid-cell-rowbody
+	background: $dark
+	color: #fff
+
+.x-grid-item
+	background: $dark
+	border-width: 0 !important
+	&:hover, &.x-grid-item-selected
+    	background-color: $light
+
+.x-grid-item-alt
+	background: $darker
+	border-width: 0 !important
+
+.x-grid-header-ct
+	background: $dark
+	border-width: 0 !important
+
+.x-grid-group-title
+	color: #fff
+
+.x-grid-row-loading
+	background-image: url('/pve2/images/dd_loading.svg')
+	background-size: 32px
+
+.x-grid-group-hd.x-grid-group-hd-collapsible
+	background: $darker
+	color: #fff
+	border-width: 0
+
+.x-grid-icon-custom:after
+	//If you use compass, instead of the line below you could use + text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: 0 0 0 $dark
+
+.x-grid-icon-custom.lock-migrate:after
+	color: $yellow
+
+.x-grid-empty 
+    background-color: inherit
+    color: #fff

@@ -12,17 +12,17 @@ import argparse
 ACTION = None
 
 images = [
-    'dd_cephblurp.png', 'dd_cephwhite.png',
-    'dd_icon-cpu.png', 'dd_icon-hdd.png',
-    'dd_icon-ram.png', 'dd_icon-swap.png',
-    'dd_icon-cd.png', 'dd_icon-display.png',
-    'dd_icon-network.png', 'dd_icon-cloud.png',
-    'dd_icon-serial.png', 'dd_icon-usb.png',
-    'dd_icon-pci.png', 'dd_logo.png',
-    'dd_mini-bottom.png', 'dd_mini-top.png',
-    'dd_readme', '/dd_tool-sprites.png',
-    'dd_trigger.png', 'dd_loading.svg',
-    'dd_icon-die.svg', 'dd_clear-trigger.png']
+    'bl_cephblurp.png', 'bl_cephwhite.png',
+    'bl_icon-cpu.png', 'bl_icon-hdd.png',
+    'bl_icon-ram.png', 'bl_icon-swap.png',
+    'bl_icon-cd.png', 'bl_icon-display.png',
+    'bl_icon-network.png', 'bl_icon-cloud.png',
+    'bl_icon-serial.png', 'bl_icon-usb.png',
+    'bl_icon-pci.png', 'bl_logo.png',
+    'bl_mini-bottom.png', 'bl_mini-top.png',
+    'bl_readme', '/bl_tool-sprites.png',
+    'bl_trigger.png', 'bl_loading.svg',
+    'bl_icon-die.svg', 'bl_clear-trigger.png']
 
 class colors:
     HEADER = '\033[95m'
@@ -68,7 +68,7 @@ def checkConn():
         urllib.request.urlopen('http://github.com')
         return
     except:
-        cprint(colors.FAIL, 'An Internet connection is required to install PVEDiscordDark.', True)
+        cprint(colors.FAIL, 'An Internet connection is required to install PVEBlack.', True)
         cprint(colors.NORMAL, 'Connect to the Internet and try again.')
         exit(1)
 
@@ -77,30 +77,30 @@ def themeIsInstalled():
     tplFile = open('/usr/share/pve-manager/index.html.tpl')
     tplLines = tplFile.readlines()
     for line in tplLines:
-        if ("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" in line or "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" in line):
+        if ("<link rel='stylesheet' type='text/css' href='/pve2/css/bl_style.css'>" in line or "<script type='text/javascript' src='/pve2/js/bl_patcher.js'></script>" in line):
             tplUsesTheme = True
-    if (os.path.isfile('/usr/share/pve-manager/css/dd_style.css') or tplUsesTheme):
+    if (os.path.isfile('/usr/share/pve-manager/css/bl_style.css') or tplUsesTheme):
         return True
     return False
 
 def installTheme():
     clear()
     doHeader()
-    baseURL = os.getenv('BASEURL', 'https://github.com/Weilbyte/PVEDiscordDark/raw/' + os.getenv("BRANCH", "master"))
+    baseURL = os.getenv('BASEURL', 'https://github.com/Weilbyte/PVEBlack/raw/' + os.getenv("BRANCH", "master"))
     cprint(colors.NORMAL, '\nBacking up index template file..')
     shutil.copyfile('/usr/share/pve-manager/index.html.tpl', '/usr/share/pve-manager/index.html.tpl.bak')
     cprint(colors.NORMAL, 'Downloading stylesheet..')
-    urllib.request.urlretrieve(baseURL + '/PVEDiscordDark/sass/PVEDiscordDark.css', '/usr/share/pve-manager/css/dd_style.css')
+    urllib.request.urlretrieve(baseURL + '/PVEBlack/sass/PVEBlack.css', '/usr/share/pve-manager/css/bl_style.css')
     cprint(colors.NORMAL, 'Downloading patcher..')
-    urllib.request.urlretrieve(baseURL + '/PVEDiscordDark/js/PVEDiscordDark.js', '/usr/share/pve-manager/js/dd_patcher.js')
+    urllib.request.urlretrieve(baseURL + '/PVEBlack/js/PVEBlack.js', '/usr/share/pve-manager/js/bl_patcher.js')
     cprint(colors.NORMAL, 'Applying stylesheet and patcher..')
     with open('/usr/share/pve-manager/index.html.tpl', 'a') as tplFile:
-        tplFile.write("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>")
-        tplFile.write("<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>")
+        tplFile.write("<link rel='stylesheet' type='text/css' href='/pve2/css/bl_style.css'>")
+        tplFile.write("<script type='text/javascript' src='/pve2/js/bl_patcher.js'></script>")
     for index, image in enumerate(images):
         imageCurrent = index + 1
         cprint(colors.NORMAL, 'Downloading images [' + str(imageCurrent) + '/' + str(len(images)) + ']..\r', False, True)
-        urllib.request.urlretrieve(baseURL + '/PVEDiscordDark/images/' + image, '/usr/share/pve-manager/images/' + image)
+        urllib.request.urlretrieve(baseURL + '/PVEBlack/images/' + image, '/usr/share/pve-manager/images/' + image)
     cprint(colors.OKGREEN, '\nTheme installed successfully!', True)
     if ACTION == None:
         cprint(colors.NORMAL, 'Press [ENTER] to go back.')
@@ -115,7 +115,7 @@ def uninstallTheme():
         tplLines = tplFile.readlines()
         tplFile.seek(0)
         for line in tplLines:
-            if ("<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" not in line or "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" not in line):
+            if ("<link rel='stylesheet' type='text/css' href='/pve2/css/bl_style.css'>" not in line or "<script type='text/javascript' src='/pve2/js/bl_patcher.js'></script>" not in line):
                 tplFile.write(line)
         tplFile.truncate()
     if os.path.exists('/usr/share/javascript/extjs/charts.js.bak'):
@@ -123,15 +123,15 @@ def uninstallTheme():
         os.remove('/usr/share/javascript/extjs/charts.js')
         shutil.copyfile('/usr/share/javascript/extjs/charts.js.bak', '/usr/share/javascript/extjs/charts.js')
         os.remove('/usr/share/javascript/extjs/charts.js.bak')
-    if os.path.exists('/usr/share/pve-manager/css/dd_style.css'):
+    if os.path.exists('/usr/share/pve-manager/css/bl_style.css'):
         cprint(colors.NORMAL, 'Removing stylesheet..')
-        os.remove('/usr/share/pve-manager/css/dd_style.css')
-    if os.path.exists('/usr/share/pve-manager/js/dd_patcher.js'):
+        os.remove('/usr/share/pve-manager/css/bl_style.css')
+    if os.path.exists('/usr/share/pve-manager/js/bl_patcher.js'):
         cprint(colors.NORMAL, 'Removing patcher..')
-        os.remove('/usr/share/pve-manager/js/dd_patcher.js')
+        os.remove('/usr/share/pve-manager/js/bl_patcher.js')
     cprint(colors.NORMAL, 'Removing images..')
     for asset in os.listdir('/usr/share/pve-manager/images/'):
-        if asset.startswith('dd_'):
+        if asset.startswith('bl_'):
             os.remove('/usr/share/pve-manager/images/' + asset)
     cprint(colors.OKGREEN, '\n\nTheme uninstalled successfully!', True)
     if ACTION == None:
@@ -141,7 +141,7 @@ def uninstallTheme():
 
 def doHeader():
     cprint(colors.HEADER, '[~]', True, True)
-    cprint(colors.NORMAL, ' PVEDiscordDark Utility\n', False, True)
+    cprint(colors.NORMAL, ' PVEBlack Utility\n', False, True)
 
 def doMainMenu():
     clear()
@@ -166,8 +166,8 @@ def doMainMenu():
         doMainMenu()
 
 def main():
-    parser = argparse.ArgumentParser(description='PVEDiscordDark Theme Utility')
-    parser.add_argument('--action', '-a', choices=['install', 'uninstall'], help='action for unattended mode')
+    parser = argparse.ArgumentParser(description='PVEBlack Theme Utility')
+    parser.abl_argument('--action', '-a', choices=['install', 'uninstall'], help='action for unattended mode')
     args = parser.parse_args()
     global ACTION
     ACTION = args.action
