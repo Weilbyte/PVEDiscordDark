@@ -141,7 +141,7 @@ def uninstallTheme():
 
 def doHeader():
     cprint(colors.HEADER, '[~]', True, True)
-    cprint(colors.NORMAL, ' PVEDiscordDark Utility\n', False, True)
+    cprint(colors.NORMAL, ' PVEDiscordDark Utility (DEPRECATED)\nThis installer is now deprecated, please use PVEDiscordDark.sh\n', False, True)
 
 def doMainMenu():
     clear()
@@ -166,7 +166,7 @@ def doMainMenu():
         doMainMenu()
 
 def main():
-    parser = argparse.ArgumentParser(description='PVEDiscordDark Theme Utility')
+    parser = argparse.ArgumentParser(description='PVEDiscordDark Theme Utility (DEPRECATED)')
     parser.add_argument('--action', '-a', choices=['install', 'uninstall'], help='action for unattended mode')
     args = parser.parse_args()
     global ACTION
@@ -176,7 +176,6 @@ def main():
     time.sleep(0.5)
     if ACTION == None:
         try:
-            print('mm')
             doMainMenu()
         except KeyboardInterrupt:
             print('\n')
