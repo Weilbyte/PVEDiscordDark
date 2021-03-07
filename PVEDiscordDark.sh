@@ -88,7 +88,7 @@ function usage {
         echo -e "  install              Install the theme"
         echo -e "  uninstall            Uninstall the theme"
         echo -e "  update               Update the theme (runs uninstall, then install)"
-        echo -e "  utility-update       Update this utility\n"
+    #    echo -e "  utility-update       Update this utility\n" (to be implemented)
         echo -e "Exit status:"
         echo -e "  0                    OK"
         echo -e "  1                    Failure"
@@ -149,7 +149,7 @@ function install {
         if [ "$_silent" = false ]; then echo -e "\e[1A\e[K${CHECKMARK} Downloading images (${#IMAGELISTARR[@]}/${#IMAGELISTARR[@]})"; fi
 
         if [ "$_silent" = false ]; then echo -e "Theme installed."; fi
-        exit 0
+        if [ "$_noexit" = false ]; then exit 0; fi
     fi
 }
 
@@ -172,7 +172,7 @@ function uninstall {
         rm /usr/share/pve-manager/images/dd_*
 
         if [ "$_silent" = false ]; then echo -e "Theme uninstalled."; fi
-        exit 0
+        if [ "$_noexit" = false ]; then exit 0; fi
     fi
 }
 
@@ -180,6 +180,7 @@ function uninstall {
 
 _silent=false
 _command=false
+_noexit=false
 
 parse_cli()
 {
@@ -214,7 +215,16 @@ parse_cli()
                     exit 0
                 fi
                 ;;
-			*)
+            update)
+                if [ "$_command" = false ]; then
+                    _command=true
+                    _noexit=true
+                    uninstall
+                    install
+                    exit 0
+                fi
+                ;;
+	     *)
 				echo -e "${BRED}Error: Got an unexpected argument \"$_key\"${REG}\n"; 
                 usage;
                 exit 1;
