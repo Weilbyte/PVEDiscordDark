@@ -25,7 +25,6 @@
 	&.x-btn-inner-default-toolbar-small
 		color: #fff
 
-
 .x-btn-disabled
 	background-image: none
 	background-color: #737fab !important
@@ -33,22 +32,20 @@
 .x-btn-icon-el
 	&.x-btn-icon-el-default-toolbar-small
 		&.fa
-			&.fa-undo
-				color: #fff
-			&.fa-terminal
-				color: #fff
-			&.fa-send-o
+			&.fa-undo, &.fa-terminal, &.fa-send-o, &.fa-fw.fa-ellipsis-v, &.fa-refresh
 				color: #fff
 			&.fa-play
 				color: $green
-			&.fa-fw.fa-ellipsis-v
-				color: #fff
 			&.fa-power-off
-	            color: #d23d3f
+				color: $redlight
 		&.x-btn-icon-el-default-toolbar-small.fa.fa-question-circle
 			color: #fff
 	&.x-btn-icon-el-default-small.fa
-		&.fa-book.x-btn-icon-el-default-toolbar-small
+		&.fa-book.x-btn-icon-el-default-toolbar-small, &.black.fa-gear
 			color: #fff
-		&.black.fa-gear
-			color: #fff
+
+.x-btn-wrap-default-toolbar-small.x-btn-arrow-right:after
+	background-image: url('/pve2/images/dd_default-toolbar-small-arrow.png')
+
+.x-btn-wrap-default-toolbar-small.x-btn-split-right:after
+	background-image: url('/pve2/images/dd_default-toolbar-small-s-arrow.png')

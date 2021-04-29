@@ -21,52 +21,19 @@
 
 .x-menu-item-icon-default.x-menu-item-icon.fa
 	&.fa-fw
-		&.fa-building
+		&.fa-building, &.fa-folder, &.fa-floppy-o, &.fa-file-o, &.fa-clone, &.fa-send-o, &.fa-group, &.fa-user, &.fa-user-o
 			color: #fff
-		
-		&.fa-folder
-			color: #fff
-
-		&.fa-send-o
-			color: #fff
-
-		&.fa-clone
-			color: #fff
-
-		&.fa-file-o
-			color: #fff
-
 		&.fa-play
 			color: $green
-
-		&.fa-stop
-			color: #d23d3f
-
-		&.fa-power-off
-			color: #d23d3f
-
-		&.fa-pause
+		&.fa-stop, &.fa-power-off
+			color: $redlight
+		&.fa-pause, &.fa-download
 			color: $yellow
 
-
-	&.fa-heartbeat
+	&.fa-heartbeat, &.fa-cube, &.fa-terminal, &.fa-desktop, &.fa-trash-o
 		color: #fff
-
-	&.fa-trash-o
-		color: #fff
-
-	&.fa-desktop
-		color: #fff
-
-	&.fa-cube
-		color: #fff
-
-	&.fa-terminal
-		color: #fff
-
 	&.fa-stop
-		color: #d23d3f
-
+		color: $redlight
 
 .x-menu-item-default.x-menu-item-separator
 	height: 0
@@ -76,14 +43,14 @@
 
 // 🙃
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"]
-    background: $dark
+	background: $dark
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"]
-    background: $darker
+	background: $darker
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"], div[aria-labelledby^="nodeCmdMenu-"][aria-labelledby$="_header-title-textEl"] > div:nth-child(2) > div:nth-child(2) > div > div[class*="x-menu-item"] > a[aria-disabled="true"]
-    opacity: 0.5
-    background: $darker
+	opacity: 0.5
+	background: $darker
 
 div[aria-labelledby^="ext-comp-"][aria-labelledby$="_header-title-textEl"]>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>div[class*=x-menu-item]
 	background: inherit

@@ -32,7 +32,7 @@
 	&.x-tree-icon-leaf.fa
 		&.fa-cube
 			color: $blurple !important
-			&.running.ha-unmanaged
+			&.running
 				color: $blurple !important
 		&.fa-fw.fa-unlock
 			color: white
@@ -40,6 +40,16 @@
 			color: $blurple !important
 		&.fa-database
 			color: $blurple !important
+		&.fa-file-o
+			&:before
+				color: rgba($blurple, 0.6)
+			&:after
+				color: $blurple
+				background: transparent
+				text-shadow: none
+		&.fa-building.online
+			&:before
+				color: $blurple
 	&.lock-migrate:after
 		color: $yellow
 
@@ -47,5 +57,7 @@
 	color: white
 
 .x-tree-icon-custom:after
-	//If you use compass, instead of the line below you could use + text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
 	text-shadow: 0 0 0 $dark
+
+.x-tree-arrows .x-tree-expander
+	background-image: url('/pve2/images/dd_arrows.png')

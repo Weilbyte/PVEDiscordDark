@@ -35,24 +35,39 @@
 	> * >
 		.x-treelist-item-text
 			color: $blurple
-			//If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 			transition: color .5s
 
 		.x-treelist-item-icon
 			color: $blurple
-			//If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 			transition: color .5s
+			&.pve-itype-treelist-item-icon-cdrom
+				content: ' '
+				background: url('/pve2/images/dd_icon-cdblurp.png') no-repeat
+				background-size: 16px 16px
+				transition: background .5s
+				height: 16px
+				top: 50%
 
 		.fa-ceph:before
 			background-image: url('/pve2/images/dd_cephblurp.png')
 			background-size: 14px 14px
-			//If you use compass, instead of the line below you could use + transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 			transition: background-image .5s
-
-
 
 .x-treelist-item-selected > .x-treelist-row
 	background-color: $darker
+
+.x-treelist-item-selected > div > div
+	> .pve-itype-treelist-item-icon-cdrom
+		content: ' '
+		background: url('/pve2/images/dd_icon-cdblurp.png') no-repeat
+		background-size: 16px 16px
+		transition: background .5s
+		height: 16px
+		top: 50%
+	> .x-treelist-item-icon.fa.fa-ceph:before
+		background-image: url('/pve2/images/dd_cephblurp.png')
+		background-size: 14px 14px
+		transition: background-image .5s
 
 .x-treelist-item-selected > div > div > div
 	color: $blurple
