@@ -1,7 +1,7 @@
-.pve-itype-icon-processor
+.pve-itype-icon-processor, .pmx-itype-icon-processor
 	background-image: url('/pve2/images/dd_icon-cpu.png')
 
-.pve-itype-icon-memory
+.pve-itype-icon-memory, .pmx-itype-icon-memory
 	background-image: url('/pve2/images/dd_icon-ram.png')
 
 .pve-itype-icon-storage
@@ -19,6 +19,15 @@
 .pve-itype-icon-cdrom
 	background-image: url('/pve2/images/dd_icon-cd.png')
 
+.pve-itype-treelist-item-icon-cdrom
+	content: ' '
+	background: url('/pve2/images/dd_icon-cd.png') no-repeat
+	background-size: 16px 16px
+	transition: background 2s
+	height: 16px
+	top: 50%
+	// content: url('/pve2/images/dd_icon-cd.png')
+
 .pve-itype-icon-network
 	background-image: url('/pve2/images/dd_icon-network.png')
 
@@ -35,7 +44,7 @@
 	background-image: url('/pve2/images/dd_icon-cloud.png')
 
 .pve-itype-icon-die
-	background-image: url('/pve2/images/dd_icon-die.png')
+	background-image: url('/pve2/images/dd_icon-die.svg')
 
 .fa-exchange:before
 	color: white
@@ -50,7 +59,7 @@
 	color: white
 
 .x-treelist-item-icon.fa:before
-    color: inherit
+	color: inherit
 
 .fa-volume-up:before
 	color: white
@@ -70,13 +79,17 @@
 .fa-fw.x-grid-icon-custom.fa
 	&.fa-database
 		color: $blurple
-
 	&.fa-desktop
 		color: $blurple
-
 	&.fa-cube
 		color: $blurple
-
+	&.fa-file-o
+		&:before
+			color: rgba($blurple, 0.6)
+		&:after
+			color: $blurple
+			background: transparent
+			text-shadow: none
 
 .lxc:after
 	background: transparent !important
