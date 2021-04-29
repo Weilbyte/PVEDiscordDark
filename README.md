@@ -16,6 +16,11 @@ The installation is done via the CLI utility. Run the following commands on the 
 ~# wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh
 ~# bash PVEDiscordDark.sh install
 ```
+Or this oneliner
+```
+bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh ) install
+```
+
 
 ## Uninstallation
  To uninstall the theme, simply run the utility with the `uninstall` command.
