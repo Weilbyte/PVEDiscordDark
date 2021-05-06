@@ -65,9 +65,9 @@ function checkSupported {
 }
 
 function isInstalled {
-    if (grep -Fq "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" $TEMPLATE_FILE ||
-        grep -Fq "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" $TEMPLATE_FILE ||
-        [ -f "/usr/share/pve-manager/css/dd_style.css" ] ); then 
+    if (grep -Fq "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" $TEMPLATE_FILE &&
+        grep -Fq "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" $TEMPLATE_FILE &&
+        [ -f "/usr/share/pve-manager/css/dd_style.css" ] && [ -f "/usr/share/pve-manager/js/dd_patcher.js" ]); then 
         true
     else 
         false
@@ -133,8 +133,12 @@ function install {
         curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/pve-manager/js/dd_patcher.js
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Applying changes to template file"; fi
-        echo "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" >> $TEMPLATE_FILE
-        echo "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" >> $TEMPLATE_FILE
+        if !(grep -Fq "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" $TEMPLATE_FILE); then
+            echo "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" >> $TEMPLATE_FILE
+        fi 
+        if !(grep -Fq "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" $TEMPLATE_FILE); then
+            echo "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" >> $TEMPLATE_FILE
+        fi 
 
         local IMAGELIST=$(curl -f -s "$BASE_URL/meta/imagelist")
         local IMAGELISTARR=($(echo "$IMAGELIST" | tr ',' '\n'))
