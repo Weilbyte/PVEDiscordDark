@@ -37,7 +37,7 @@ function patchGaugeWidget() {
 };
 
 function patchBackupConfig() {
-	PVE.window.BackupConfig.prototype.items.style['background-color'] = '#23272a';
+	//PVE.window.BackupConfig.prototype.items.style['background-color'] = '#23272a';
 };
 
 function patchDiskSmartWindow() {
@@ -46,7 +46,7 @@ function patchDiskSmartWindow() {
 }
 
 function patchTFAEdit() {
-	PVE.window.TFAEdit.prototype.items[0].items[0].items[1].style["background-color"] = 'transparent';
+	//PVE.window.TFAEdit.prototype.items[0].items[0].items[1].style["background-color"] = 'transparent';
 }
 
 function patchCreateWidget() {
