@@ -1,5 +1,5 @@
 #!/bin/bash
-# https://github.com/Weilbyte/PVEDiscordDark
+# https://github.com/Luckyvb/PBSDiscordDark
 
 #region Consts
 RED='\033[0;31m'
@@ -13,7 +13,7 @@ CHECKMARK='\033[0;32m\xE2\x9C\x94\033[0m'
 TEMPLATE_FILE="/usr/share/javascript/proxmox-backup/index.hbs"
 SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 
-REPO=${REPO:-"Weilbyte/PVEDiscordDark"}
+REPO=${REPO:-"Luckyvb/PBSDiscordDark"}
 DEFAULT_TAG="master"
 TAG=${TAG:-$DEFAULT_TAG}
 BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
@@ -60,7 +60,7 @@ function checkSupported {
         local SUPPORTEDARR=($(echo "$SUPPORTED" | tr ',' '\n'))
         if ! (printf '%s\n' "${SUPPORTEDARR[@]}" | grep -q -P "$PBSVersionMajor"); then
             echo -e "${WARN}You might encounter issues because your version ($PBSVersionMajor) is not matching currently supported versions ($SUPPORTED)."
-            echo -e "If you do run into any issues on >newer< versions, please consider opening an issue at https://github.com/Weilbyte/PVEDiscordDark/issues.${REG}"
+            echo -e "If you do run into any issues on >newer< versions, please consider opening an issue at https://github.com/Luckyvb/PBSDiscordDark/issues.${REG}"
         fi
     fi
 }
@@ -94,7 +94,7 @@ function usage {
         echo -e "  0                    OK"
         echo -e "  1                    Failure"
         echo -e "  2                    Already installed, OR not installed (when using install/uninstall commands)\n"
-        echo -e "Report issues at: <https://github.com/Weilbyte/PVEDiscordDark/issues>"
+        echo -e "Report issues at: <https://github.com/Luckyvb/PBSDiscordDark/issues>"
     fi
 }
 
@@ -128,10 +128,10 @@ function install {
         cp $TEMPLATE_FILE $TEMPLATE_FILE.bak
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Downloading stylesheet"; fi
-        curl -s $BASE_URL/PVEDiscordDark/sass/PVEDiscordDark.css > /usr/share/javascript/proxmox-backup/css/dd_style.css
+        curl -s $BASE_URL/PBSDiscordDark/sass/PBSDiscordDark.css > /usr/share/javascript/proxmox-backup/css/dd_style.css
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Downloading patcher"; fi
-        curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/javascript/proxmox-backup/js/dd_patcher.js
+        curl -s $BASE_URL/PBSDiscordDark/js/PBSDiscordDark.js > /usr/share/javascript/proxmox-backup/js/dd_patcher.js
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Applying changes to template file"; fi
         if !(grep -Fq "<link rel='stylesheet' type='text/css' href='/css/dd_style.css'>" $TEMPLATE_FILE); then
@@ -147,7 +147,7 @@ function install {
         ITER=0
         for image in "${IMAGELISTARR[@]}"
         do
-                curl -s $BASE_URL/PVEDiscordDark/images/$image > /usr/share/javascript/proxmox-backup/images/$image
+                curl -s $BASE_URL/PBSDiscordDark/images/$image > /usr/share/javascript/proxmox-backup/images/$image
                 ((ITER++))
                 if [ "$_silent" = false ]; then echo -e "\e[1A\e[KDownloading images ($ITER/${#IMAGELISTARR[@]})"; fi
         done
@@ -189,54 +189,54 @@ _noexit=false
 
 parse_cli()
 {
-	while test $# -gt -0
-	do
-		_key="$1"
-		case "$_key" in
-			-h|--help)
-				usage
-				exit 0
-				;;
-            -s|--silent)
-                _silent=true
-                ;;
-            status) 
-                if [ "$_command" = false ]; then
-                    _command=true
-                    status
-                fi
-                ;;
-            install) 
-                if [ "$_command" = false ]; then
-                    _command=true
-                    install
-                    exit 0
-                fi
-                ;;
-            uninstall)
-                if [ "$_command" = false ]; then
-                    _command=true
-                    uninstall
-                    exit 0
-                fi
-                ;;
-            update)
-                if [ "$_command" = false ]; then
-                    _command=true
-                    _noexit=true
-                    uninstall
-                    install
-                    exit 0
-                fi
-                ;;
-	     *)
-				echo -e "${BRED}Error: Got an unexpected argument \"$_key\"${REG}\n"; 
-                usage;
-                exit 1;
-				;;
-		esac
-		shift
-	done
+  while test $# -gt -0
+  do
+    key="$1"
+    case "$_key" in
+      -h|--help)
+        usage
+        exit 0
+        ;;
+      -s|--silent)
+        _silent=true
+        ;;
+      status)
+        if [ "$_command" = false ]; then
+          _command=true
+          status
+        fi
+        ;;
+      install)
+        if [ "$_command" = false ]; then
+          _command=true
+          install
+          exit 0
+        fi
+        ;;
+      uninstall)
+        if [ "$_command" = false ]; then
+          _command=true
+          uninstall
+          exit 0
+        fi
+        ;;
+      update)
+        if [ "$_command" = false ]; then
+          _command=true
+          _noexit=true
+          uninstall
+          install
+          exit 0
+        fi
+        ;;
+      *)
+        echo -e "${BRED}Error: Got an unexpected argument \"$_key\"${REG}\n";
+        usage;
+        exit 1;
+        ;;
+      esac
+    shift
+  done
 }
 
 parse_cli "$@"
