@@ -191,7 +191,7 @@ parse_cli()
 {
   while test $# -gt -0
   do
-    key="$1"
+    _key="$1"
     case "$_key" in
       -h|--help)
         usage
