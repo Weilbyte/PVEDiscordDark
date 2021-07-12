@@ -24,7 +24,24 @@ const swapFavIcon = async function() {
 	var found = false;
 	for (var i = 0; i < lnkElements.length; i++) {
 		var node = lnkElements[i]
-		if (node.getAttribute('rel') == 'icon' && node.getAttributr('href') == '/images/logo-128.png') {
+		if (node.getAttribute('rel') == 'icon' && node.getAttribute('href') == '/images/logo-128.png') {
+			found = true;
+			node.setAttribute('href', '/images/dd_logo-128.png');
+			i = lnkElements.length;
+		}
+	}
+	if (!found) {
+		await new Promise(resolve => setTimeout(resolve, 60));
+		await swapFavIcon();
+	};
+};
+
+const swapFavAppleIcon = async function() {
+	const lnkElements = document.getElementsByTagName('link');
+	var found = false;
+	for (var i = 0; i < lnkElements.length; i++) {
+		var node = lnkElements[i]
+		if (node.getAttribute('rel') == 'apple-touch-icon' && node.getAttribute('href') == '/pve2/images/logo-128.png') {
 			found = true;
 			node.setAttribute('href', '/images/dd_logo-128.png');
 			i = lnkElements.length;
@@ -78,6 +95,7 @@ function patchCreateWidget() {
 
 swapLogo();
 swapFavIcon();
+swapFavAppleIcon();
 patchCharts();
 patchGaugeWidget();
 patchBackupConfig();
