@@ -20,6 +20,11 @@ BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
 #endregion Consts
 
 #region Prerun checks
+if [[ $EUID -ne 0 ]]; then
+    echo -e >&2 "${BRED}Root privileges are required to perform this operation${REG}";
+    exit 1
+fi
+
 hash sed 2>/dev/null || { 
     echo -e >&2 "${BRED}sed is required but missing from your system${REG}";
     exit 1;
