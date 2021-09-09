@@ -21,7 +21,7 @@
 	background: $darker
 
 div[id^="toolbar-"][id$="-innerCt"] div[id^="toolbar-"][id$="-targetEl"] div ul li div
-    background-color: $dark
+	background-color: $dark
 
 div[id^="pveGuestStatusView-"][id$="-body"]
 	background: $darker
@@ -89,9 +89,13 @@ a[id^="menuitem-"][id$="-itemEl"] div[class*="fa-trash-o"]:before
 	background-color: transparent !important
 	border: 1px solid #d23d3f !important
 div[id="menu-1029-targetEl"] > div[class*="x-menu-item"]
-    background: $dark
+	background: $dark
 div[id="menu-1029-targetEl"] > div[class*="x-menu-item"] > a[class*="x-menu-item-focus"]
-    background: $darker
+	background: $darker
 div[id="menu-1029-targetEl"] > div[class*="x-menu-item"] > div[class*="x-menu-item"] > a[aria-disabled="true"]
-    opacity: 0.5
-    background: $darker
+	opacity: 0.5
+	background: $darker
+
+// Panels on "My Settings"
+div[id^="form-"][id$="-innerCt"][style="height: 160px; width: 356px;"], div[id^="fieldset-"][id$="-innerCt"]
+	background: $darker
