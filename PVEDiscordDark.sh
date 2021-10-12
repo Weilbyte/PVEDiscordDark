@@ -89,7 +89,7 @@ function usage {
         echo -e "  -h --help            Show this help"
         echo -e "  -s --silent          Silent mode\n"
         echo -e "Commands:"
-        echo -e "  status               Check current theme status (in silent mode, returns 0 if installed, and 1 if not installed)"
+        echo -e "  status               Check current theme status (returns 0 if installed, and 1 if not installed)"
         echo -e "  install              Install the theme"
         echo -e "  uninstall            Uninstall the theme"
         echo -e "  update               Update the theme (runs uninstall, then install)"
@@ -115,10 +115,8 @@ function status {
         echo -e "PVE"
         echo -e "  Version:     $PVEVersion (major $PVEVersionMajor)\n"
         echo -e "Utility hash:  $(sha256sum $SCRIPTPATH 2>/dev/null  || echo N/A)"
-        exit 0
-    else 
-        if isInstalled; then exit 0; else exit 1; fi
     fi
+    if isInstalled; then exit 0; else exit 1; fi
 }
 
 function install {
