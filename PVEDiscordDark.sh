@@ -1,6 +1,8 @@
 #!/bin/bash
 # https://github.com/Weilbyte/PVEDiscordDark
 
+umask 022
+
 #region Consts
 RED='\033[0;31m'
 BRED='\033[0;31m\033[1m'
