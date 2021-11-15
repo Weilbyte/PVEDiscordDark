@@ -37,7 +37,7 @@ class Server(BaseHTTPRequestHandler):
         elif ext == "js":
             data = open(os.path.join(DIR_JS, "PVEDiscordDark.js"), "rb").read()
             type = "application/javascript"
-        elif ext == "png" or ext == "jpg" or ext == "jpeg":
+        elif ext == "png" or ext == "jpg" or ext == "jpeg" or ext == "svg":
             try:
                 data = open(os.path.join(DIR_IMAGES, file), "rb").read()
                 type = f"image/{ext}"
