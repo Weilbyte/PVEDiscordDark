@@ -1,0 +1,49 @@
+name: Offline Bundle
+
+on:
+  push:
+    branches: [main]
+  release:
+    types: [published]
+  schedule:
+    - cron:  '0 0 1 * *'
+
+jobs:
+  Bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Move files
+        run: |
+          sudo mkdir /srv/PVEDD &&
+          sudo chown $USER:$USER /srv/PVEDD &&
+          cp $GITHUB_WORKSPACE/PVEDiscordDark.sh /srv/PVEDD/ &&
+          mkdir /srv/PVEDD/offline &&
+          cp -r $GITHUB_WORKSPACE/meta /srv/PVEDD/offline &&
+          mkdir /srv/PVEDD/offline/PVEDiscordDark &&
+          cp -r $GITHUB_WORKSPACE/PVEDiscordDark/images /srv/PVEDD/offline/PVEDiscordDark/ &&
+          cp -r $GITHUB_WORKSPACE/PVEDiscordDark/js /srv/PVEDD/offline/PVEDiscordDark/ &&
+          mkdir /srv/PVEDD/offline/PVEDiscordDark/sass
+          cp $GITHUB_WORKSPACE/PVEDiscordDark/sass/PVEDiscordDark.css /srv/PVEDD/offline/PVEDiscordDark/sass/
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: PVEDiscordDark
+          path: /srv/PVEDD/
+      - name: Install zip
+        if: ${{ github.event_name == 'release' }}
+        uses: montudor/action-zip@v0.1.0
+      - name: Package folder
+        if: ${{ github.event_name == 'release' }}
+        run: zip -qq -r PVEDiscordDark.zip PVEDiscordDark.sh offline
+        working-directory: /srv/PVEDD
+      - name: Upload to release
+        if:  ${{ github.event_name == 'release' }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: /srv/PVEDD/PVEDiscordDark.zip
+          asset_name: PVEDiscordDark.zip
+          asset_content_type: application/zip
