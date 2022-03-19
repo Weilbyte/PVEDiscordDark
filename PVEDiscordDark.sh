@@ -13,12 +13,17 @@ REG='\033[0m'
 CHECKMARK='\033[0;32m\xE2\x9C\x94\033[0m'
 
 TEMPLATE_FILE="/usr/share/pve-manager/index.html.tpl"
-SCRIPTPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+SCRIPTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+SCRIPTPATH="${SCRIPTDIR}$(basename "${BASH_SOURCE[0]}")"
+
+OFFLINEDIR="${SCRIPTDIR}offline"
 
 REPO=${REPO:-"Weilbyte/PVEDiscordDark"}
 DEFAULT_TAG="master"
 TAG=${TAG:-$DEFAULT_TAG}
 BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
+
+OFFLINE=false
 #endregion Consts
 
 #region Prerun checks
@@ -42,14 +47,21 @@ hash pveversion 2>/dev/null || {
     exit 1;
 }
 
-curl -sSf -f https://github.com/robots.txt &> /dev/null || {
-    echo -e >&2 "${BRED}Could not establish a connection to GitHub (github.com)${REG}";
-    exit 1;
-}
+if test -d "$OFFLINEDIR"; then
+    echo "Offline directory detected, entering offline mode."
+    OFFLINE=true
+fi
 
-if [ $TAG != $DEFAULT_TAG ]; then
-    if !([[ $TAG =~ [0-9] ]] && [ ${#TAG} -ge 7 ] && (! [[ $TAG =~ ['!@#$%^&*()_+.'] ]]) ); then 
-        echo -e "${WARN}It appears like you are using a non-default tag. For security purposes, please use the SHA-1 hash of said tag instead${REG}"
+if [ "$OFFLINE" = false ]; then
+    curl -sSf -f https://github.com/robots.txt &> /dev/null || {
+        echo -e >&2 "${BRED}Could not establish a connection to GitHub (github.com)${REG}";
+        exit 1;
+    }
+
+    if [ $TAG != $DEFAULT_TAG ]; then
+        if !([[ $TAG =~ [0-9] ]] && [ ${#TAG} -ge 7 ] && (! [[ $TAG =~ ['!@#$%^&*()_+.'] ]]) ); then 
+            echo -e "${WARN}It appears like you are using a non-default tag. For security purposes, please use the SHA-1 hash of said tag instead${REG}"
+        fi
     fi
 fi
 #endregion Prerun checks
@@ -59,9 +71,18 @@ PVEVersionMajor=$(echo $PVEVersion | cut -d'-' -f1)
 
 #region Helper functions
 function checkSupported {   
-    local SUPPORTED=$(curl -f -s "$BASE_URL/meta/supported")
+    if [ "$OFFLINE" = false ]; then
+        local SUPPORTED=$(curl -f -s "$BASE_URL/meta/supported")
+    else
+        local SUPPORTED=$(cat "$OFFLINEDIR/meta/supported")
+    fi
+
     if [ -z "$SUPPORTED" ]; then 
-        echo -e "${WARN}Could not reach supported version file ($BASE_URL/meta/supported). Skipping support check.${REG}"
+        if [ "$OFFLINE" = false ]; then
+            echo -e "${WARN}Could not reach supported version file ($BASE_URL/meta/supported). Skipping support check.${REG}"
+        else
+            echo -e "${WARN}Could not find supported version file ($OFFLINEDIR/meta/supported). Skipping support check.${REG}"
+        fi
     else 
         local SUPPORTEDARR=($(echo "$SUPPORTED" | tr ',' '\n'))
         if ! (printf '%s\n' "${SUPPORTEDARR[@]}" | grep -q -P "$PVEVersionMajor"); then
@@ -117,6 +138,7 @@ function status {
         echo -e "PVE"
         echo -e "  Version:     $PVEVersion (major $PVEVersionMajor)\n"
         echo -e "Utility hash:  $(sha256sum $SCRIPTPATH 2>/dev/null  || echo N/A)"
+        echo -e "Offline mode:  $OFFLINE"
     fi
     if isInstalled; then exit 0; else exit 1; fi
 }
@@ -132,10 +154,19 @@ function install {
         cp $TEMPLATE_FILE $TEMPLATE_FILE.bak
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Downloading stylesheet"; fi
-        curl -s $BASE_URL/PVEDiscordDark/sass/PVEDiscordDark.css > /usr/share/pve-manager/css/dd_style.css
+
+        if [ "$OFFLINE" = false ]; then
+            curl -s $BASE_URL/PVEDiscordDark/sass/PVEDiscordDark.css > /usr/share/pve-manager/css/dd_style.css
+        else
+            cp "$OFFLINEDIR/PVEDiscordDark/sass/PVEDiscordDark.css" /usr/share/pve-manager/css/dd_style.css
+        fi
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Downloading patcher"; fi
-        curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/pve-manager/js/dd_patcher.js
+        if [ "$OFFLINE" = false ]; then
+            curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/pve-manager/js/dd_patcher.js
+        else
+            cp "$OFFLINEDIR/PVEDiscordDark/js/PVEDiscordDark.js" /usr/share/pve-manager/js/dd_patcher.js
+        fi
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Applying changes to template file"; fi
         if !(grep -Fq "<link rel='stylesheet' type='text/css' href='/pve2/css/dd_style.css'>" $TEMPLATE_FILE); then
@@ -145,13 +176,22 @@ function install {
             echo "<script type='text/javascript' src='/pve2/js/dd_patcher.js'></script>" >> $TEMPLATE_FILE
         fi 
 
-        local IMAGELIST=$(curl -f -s "$BASE_URL/meta/imagelist")
+        if [ "$OFFLINE" = false ]; then
+            local IMAGELIST=$(curl -f -s "$BASE_URL/meta/imagelist")
+        else 
+            local IMAGELIST=$(cat "$OFFLINEDIR/meta/imagelist")
+        fi
+
         local IMAGELISTARR=($(echo "$IMAGELIST" | tr ',' '\n'))
         if [ "$_silent" = false ]; then echo -e "Downloading images (0/${#IMAGELISTARR[@]})"; fi
         ITER=0
         for image in "${IMAGELISTARR[@]}"
         do
-                curl -s $BASE_URL/PVEDiscordDark/images/$image > /usr/share/pve-manager/images/$image
+                if [ "$OFFLINE" = false ]; then
+                    curl -s $BASE_URL/PVEDiscordDark/images/$image > /usr/share/pve-manager/images/$image
+                else
+                    cp "$OFFLINEDIR/PVEDiscordDark/images/$image" /usr/share/pve-manager/images/$image
+                fi
                 ((ITER++))
                 if [ "$_silent" = false ]; then echo -e "\e[1A\e[KDownloading images ($ITER/${#IMAGELISTARR[@]})"; fi
         done
