@@ -2,7 +2,7 @@ name: Offline Bundle
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   release:
     types: [published]
   schedule:
