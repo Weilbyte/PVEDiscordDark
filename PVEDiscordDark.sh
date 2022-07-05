@@ -53,7 +53,7 @@ else
 fi
 
 if [ "$OFFLINE" = false ]; then
-    curl -sSf -f https://github.com/robots.txt &> /dev/null || {
+    curl -sSf -f https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh &> /dev/null || {
         echo -e >&2 "${BRED}Could not establish a connection to GitHub (github.com)${REG}";
         exit 1;
     }
