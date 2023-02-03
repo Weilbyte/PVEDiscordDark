@@ -1,5 +1,48 @@
+# Develop Branch
 
-
+## Setting up a development environment:
+1. Clone this repository/branch
+```shellsession
+$ git clone https://github.com/b-/PVEThemes -b develop
+$ cd PVEThemes/PVEDiscordDark
+```
+2. Make sure you have python3-pip and python3-venv installed. (python3-wheel is recommended as well). This command will be a little different if you're not doing this development on a Debian or Ubuntu machine. 
+```shellsession
+$ sudo apt update && sudo apt install python3-pip python3-wheel python3-venv
+```
+3. Create and activate a Python venv, and install the requirements
+```shellsession
+$ python3 -m venv venv
+$ . venv/bin/activate
+(venv) $ python3 -m pip install -r requirements.txt
+Collecting libsass
+  Downloading libsass-0.22.0-cp37-abi3-macosx_10_15_x86_64.whl (1.1 MB)
+     |████████████████████████████████| 1.1 MB 599 kB/s
+Collecting watchdog
+  Downloading watchdog-2.2.1-cp39-cp39-macosx_10_9_x86_64.whl (88 kB)
+     |████████████████████████████████| 88 kB 8.1 MB/s
+Installing collected packages: watchdog, libsass
+Successfully installed libsass-0.22.0 watchdog-2.2.1
+```
+4. Now you can build the css
+```shellsession
+(venv) $ python3 sassy.py
+Compiled PVEDiscordDark.sass to PVEDiscordDark.css
+```
+5. If you want to automatically recompile it upon any changes:
+```shellsession
+(venv) $ python3 sassy.py w
+```
+6. If you want to serve a test page:
+(TODO: figure out how that works)
+7. You can install a built copy right from the dev environment if you're brave enough to work on this on your actual proxmox server:
+```shellsession
+$ sudo ./install.sh install
+```
+or
+```shellsession
+$ sudo ./install.sh update
+```
 
 
 ![](https://i.imgur.com/SnlCyHF.png)

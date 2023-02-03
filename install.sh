@@ -14,9 +14,12 @@ CHECKMARK='\033[0;32m\xE2\x9C\x94\033[0m'
 
 TEMPLATE_FILE="/usr/share/pve-manager/index.html.tpl"
 SCRIPTDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/"
+# TODO: Remove trailing / and change all "${SCRIPTDIR}/"
+#       to "${SCRIPTDIR}"
 SCRIPTPATH="${SCRIPTDIR}$(basename "${BASH_SOURCE[0]}")"
 
-OFFLINEDIR="${SCRIPTDIR}offline"
+OFFLINEDIR="${SCRIPTDIR}"
+OFFLINECHECKDIR="${SCRIPTDIR}meta"
 
 REPO=${REPO:-"Weilbyte/PVEDiscordDark"}
 DEFAULT_TAG="master"
@@ -42,8 +45,8 @@ hash pveversion 2>/dev/null || {
     exit 1;
 }
 
-if test -d "$OFFLINEDIR"; then
-    echo "Offline directory detected, entering offline mode."
+if test -d "$OFFLINECHECKDIR"; then
+    echo "${OFFLINECHECKDIR} directory detected, entering offline mode."
     OFFLINE=true
 else
     hash curl 2>/dev/null || { 
